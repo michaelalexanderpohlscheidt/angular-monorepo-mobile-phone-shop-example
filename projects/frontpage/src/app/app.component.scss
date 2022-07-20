@@ -1,0 +1,15 @@
+.wrapper {
+    background-color: red;
+    float: left;
+    width: 100%;
+    min-height: 32px;
+    margin-top: 8px;
+    display: grid;
+}
+
+.content {
+    width: 62em;
+    height: 100%;
+    margin: 0 auto;
+    background-color: blue;
+}

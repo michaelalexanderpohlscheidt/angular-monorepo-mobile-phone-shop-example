@@ -1,0 +1,30 @@
+$color-fresh: #4ABDAC;
+$color-vermillion: #FC4A1A;
+$color-sunshine: #F7B733;
+$color-clean: #DFDCE3;
+
+.img-logo {
+    width: 32px;
+    height: 32px;
+    float: left;
+    padding-right: 32px;
+}
+
+.navbar {
+    background-color: $color-fresh;
+}
+
+.btn-login {
+    background-color: $color-sunshine;
+    float: right;
+}
+
+.btn-logout {
+    background-color: #FC4A1A;
+    float: right;
+}
+
+button {
+    background-color: $color-clean;
+    margin-right: 4px;
+}
