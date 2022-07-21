@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+
+    "start-frontpage": "ng s --project=frontpage --port 4200",
+    "start-shop": "ng s --project=shop --port 4300"
   },
   "private": true,
   "dependencies": {

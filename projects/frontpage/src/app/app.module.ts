@@ -5,19 +5,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavigationComponent } from './navigation/navigation.component';
+/* SubModules */
+import { AppModule as ShopModule } from 'projects/shop/src/app/app.module';
+import { AppModule as ExplainationModule} from 'projects/explaination/src/app/app.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavigationComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-
+    BrowserModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+
+    ShopModule,
+    ExplainationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
