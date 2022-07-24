@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Perspective } from 'projects/shared/enums/perspective';
 
 @Component({
   selector: 'frp-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontpage';
+  perspective: Perspective = Perspective.Normal;
 }

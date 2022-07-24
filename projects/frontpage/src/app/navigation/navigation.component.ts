@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Perspective } from 'projects/shared/enums/perspective';
 
 @Component({
   selector: 'frp-navigation',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+
+  @Input() perspective: Perspective = Perspective.Normal;
 
   constructor() { }
 

@@ -3,14 +3,14 @@
     <a routerLink="shop" mat-raised-button>Shop</a>
     <a routerLink="explaination" mat-raised-button class="padding-right-border">How this Angular side works</a>
     <!-- Here buttons for logged user -->
-    <a mat-raised-button>My Account</a>
-    <a mat-raised-button>Contracts</a>
-    <a mat-raised-button>Contacts</a>
+    <a *ngIf="perspective === 1" mat-raised-button>My Account</a>
+    <a *ngIf="perspective === 1" mat-raised-button>Contracts</a>
+    <a *ngIf="perspective === 1" mat-raised-button>Contacts</a>
     <!-- Here buttons for logged admin -->
-    <a mat-raised-button>Customers</a>
-    <a mat-raised-button>Offers</a>
-    <a mat-raised-button>Messages</a>
+    <a *ngIf="perspective === 2" mat-raised-button>Customers</a>
+    <a *ngIf="perspective === 2" mat-raised-button>Offers</a>
+    <a *ngIf="perspective === 2" mat-raised-button>Messages</a>
     <!-- Here Login/Logout button -->
-    <a mat-raised-button class="btn-login">Login</a>
-    <a mat-raised-button class="btn-logout">Logout 5:00</a>
+    <a *ngIf="perspective === 0" mat-raised-button class="btn-login">Login</a>
+    <a *ngIf="perspective !== 0" mat-raised-button class="btn-logout">Logout 5:00</a>
 </mat-card>
