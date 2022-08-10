@@ -1,38 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { BehaviorSubject, map, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'shp-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent implements OnDestroy{
 
-  currentSliderPages: number = 3;
-  currentSliderPage: number = 1;
-  leftPosition = -(896 * this.currentSliderPage) + 'px';
+  layoutNumber: number = 0;
+  layoutNumber$ = new BehaviorSubject<number>(0);
+  closePage$ = new Subject<void>();
 
-  constructor() { }
+  constructor() { 
+    this.layoutNumber$.pipe(
+      map((number) => Math.abs(number)),
+      takeUntil(this.closePage$)
+    ).subscribe((number) => this.layoutNumber = number);
+  }
 
-  ngOnInit(): void {
+  ngOnDestroy() {
+    this.closePage$.next();
   }
 
   nextPage() {
-    this.currentSliderPage += 1;
-
-    if(this.currentSliderPage > this.currentSliderPages - 1) {
-      this.currentSliderPage = 0;
-    }
-
-    this.leftPosition = -(896 * this.currentSliderPage) + 'px';
+    this.layoutNumber$.next((this.layoutNumber$.value + 1) % 3);
   }
 
   previousPage() {
-    this.currentSliderPage -= 1;
-
-    if(this.currentSliderPage < 0) {
-      this.currentSliderPage = this.currentSliderPages - 1;
-    }
-
-    this.leftPosition = -(896 * this.currentSliderPage) + 'px';
+    this.layoutNumber$.next((this.layoutNumber$.value - 1) % 3);
   }
 }

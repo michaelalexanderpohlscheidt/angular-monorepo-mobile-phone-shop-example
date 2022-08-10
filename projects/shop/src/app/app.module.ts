@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { SliderComponent } from './slider/slider.component';
 
 import { MatIconModule } from '@angular/material/icon';
+import { ArticlePreviewComponent } from './article-preview/article-preview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SliderComponent
+    SliderComponent,
+    ArticlePreviewComponent
   ],
   imports: [
     BrowserModule,

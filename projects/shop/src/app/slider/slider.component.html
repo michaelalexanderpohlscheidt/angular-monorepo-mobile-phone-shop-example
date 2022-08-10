@@ -1,24 +1,32 @@
-<p class="shp-page-number">{{ currentSliderPage + 1 }}/{{ currentSliderPages }}</p>
+
 <div class="shp-slider">
-    <button (click)="previousPage()" class="shp-slider-navigator shp-slider-navigator-left">
+    <button class="shp-slider-navigator" (click)="previousPage()">
         <mat-icon>arrow_back_ios</mat-icon>
     </button>
 
     <div class="shp-slider-wrapper">
-        <div class="shp-slider-content" style="width: calc(100% * 3);"  [style.left]="leftPosition">
-            <div>
-                <h3>Jetzt Neu! - 399🍪/Monat</h3>
-            </div>
-            <div>
-                <h3>Jetzt Neu! - 499🍪/Monat</h3>
-            </div>
-            <div>
-                <h3>Jetzt Neu! - 599🍪/Monat</h3>
-            </div>
+        <div class="shp-slider-content">
+            <ng-container [ngSwitch]="layoutNumber">
+                <ng-container *ngSwitchCase="0">
+                    <div>
+                        <h3>Jetzt Neu! - 399🍪/Monat</h3>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="1">
+                    <div>
+                        <h3>Jetzt Neu! - 499🍪/Monat</h3>
+                    </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="2">
+                    <div>
+                        <h3>Jetzt Neu! - 599🍪/Monat</h3>
+                    </div>
+                </ng-container>
+            </ng-container>
         </div>
     </div>
 
-    <button (click)="nextPage()" class="shp-slider-navigator shp-slider-navigator-right">
+    <button class="shp-slider-navigator" (click)="nextPage()">
         <mat-icon>arrow_forward_ios</mat-icon>
     </button>
 </div>
