@@ -1,4 +1,23 @@
 <div [class.shp-article-left]="isLeftSideArticle" [class.shp-article-right]="!isLeftSideArticle">
-    <img class="shp-article-image" />
-    <div class="shp-article-description"></div>
+    <img class="shp-article-image" [style.background-image]="'url(' + image + ')'"/>
+    <div class="shp-article-description">
+        <h3>{{ header }}</h3>
+        <p>
+            Nullam cursus hendrerit odio eget venenatis.
+            Quisque ultricies velit a libero bibendum, nec sollicitudin neque fermentum.
+            Maecenas odio leo, egestas at arcu non, iaculis fermentum turpis.
+            Maecenas est nisi, congue vel tempor nec, eleifend ut mi. Donec nulla dolor, euismod a metus quis, porttitor tincidunt nibh. 
+            Mauris accumsan, justo at fringilla tincidunt, augue enim pulvinar urna, at pellentesque ipsum erat at ex. 
+            Curabitur tristique dolor porttitor sem aliquet cursus.
+            Nulla in ante dignissim, viverra lorem at, ornare libero.Aliquam erat volutpat.
+            Vestibulum rutrum magna augue, et pulvinar nisl tincidunt eget.
+            Proin tempus vehicula tortor sit amet egestas.
+            Quisque viverra, lorem et feugiat iaculis, nunc quam tempor dolor, quis accumsan tortor neque et est.
+            Quisque sed sollicitudin nisl.
+            Aliquam luctus pharetra lorem, in tempus arcu convallis ac.
+        </p>
+        <p class="shp-article-footer">
+            Preis einmalig {{ price }}🍪 oder {{ (price / 12).toFixed(2) }}🍪 pro Monat (Laufzeit 12 Monate)
+        </p>
+    </div>
 </div>

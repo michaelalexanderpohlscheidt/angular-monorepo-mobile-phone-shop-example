@@ -17,3 +17,11 @@ I am using @angular/materials so type:
 Our first application will be the fontpage. This application will be the default application.
 
     ng g application frontpage -p frp
+
+# How to start your monorepo
+
+Just type:
+
+    ng serve
+
+It will start the default project (see angular.json). In my case is the default project "frontpage"

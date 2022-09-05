@@ -8,6 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ArticlePreviewComponent implements OnInit {
 
   @Input() isLeftSideArticle = true;
+  @Input() image = "";
+  @Input() header = "";
+  @Input() price = 499;
 
   constructor() { }
 

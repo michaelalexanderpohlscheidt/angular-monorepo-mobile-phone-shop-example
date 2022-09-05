@@ -28,7 +28,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/frontpage/src/favicon.ico",
-              "projects/frontpage/src/assets"
+              "projects/frontpage/src/assets",
+              {
+                "input": "projects/shared/images",
+                "glob": "*.png",
+                "output": "assets"
+              }
             ],
             "styles": [
               "projects/frontpage/src/styles.scss"
