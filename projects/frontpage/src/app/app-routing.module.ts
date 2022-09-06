@@ -7,6 +7,10 @@ import { AppComponent as ExplainationComponent} from 'projects/explaination/src/
 
 const routes: Routes = [
   {
+    path: '',
+    component: ShopComponent
+  },
+  {
     path: 'shop',
     component: ShopComponent
   },
